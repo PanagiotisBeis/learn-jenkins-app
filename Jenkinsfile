@@ -79,7 +79,7 @@ pipeline {
             steps {
                 sh '''
                     npm install -g netlify-cli -g
-                    netfliy --version    
+                    node_modules/.bin/netfliy --version    
                 '''
             }
         }
