@@ -121,7 +121,7 @@ pipeline {
                 input message: 'ready to deploy? ', ok: 'Yes, I am sure'
                 }
         }
-        
+
         stage ('Deploy prod'){
             agent {
                 docker {
@@ -139,7 +139,7 @@ pipeline {
                     node_modules/.bin/netlify --version
                     echo "DEPLOY SITE TO PRODUCTION. SITE ID: $NETLIFY_SITE_ID"
                     node_modules/.bin/netlify status
-                    node_modules/.bin/netlify deploy --no-build --dir=build --prod                
+                    node_modules/.bin/netlify deploy --no-build --dir=build --prod
                     npx playwright test --reporter=html
                 '''
             }
