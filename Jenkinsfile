@@ -22,7 +22,7 @@ pipeline {
                     sh '''
                         aws --version
                         aws ecs register-task-definition --cli-input-json file://aws/task-definition-prod.json
-                        aws ecs update-service -cluster learn-jenkins-app-cluster-2026 --service LearnJenkinsApp-TaskDefinition-Prod-service-m5haavni --task-definition LearnJenkinsApp-TaskDefinition-Prod:2
+                        aws ecs update-service --cluster learn-jenkins-app-cluster-2026 --service LearnJenkinsApp-TaskDefinition-Prod-service-m5haavni --task-definition LearnJenkinsApp-TaskDefinition-Prod:2
                     '''
                 }
             }
